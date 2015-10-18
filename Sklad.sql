@@ -17,7 +17,7 @@ CREATE TABLE rack(
 	slot_height integer NOT NULL
 );
 CREATE TABLE rack_client(
-	rack_num integer NOT NULL REFERENCES rack,
+	rack_num integer UNIQUE NOT NULL REFERENCES rack,
 	client_name text NOT NULL REFERENCES client,
 	PRIMARY KEY (rack_num, client_name)
 );
